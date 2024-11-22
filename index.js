@@ -41,16 +41,17 @@ app.get('/total-returns', (req, res) => {
 
 // Calculate the Return Percentage
 
-function calReturnPercentage(boughtAt, returns) {
+function calreturnPercentage(boughtAt,returns) {
   let result = (returns / boughtAt) * 100;
+
   return result.toString();
 }
 
-app.get('/calculate-return-percentage', (req, res) => {
+app.get('/calculate-return-percentage',(req,res) => {
   let boughtAt = parseFloat(req.query.boughtAt);
   let returns = parseFloat(req.query.returns);
 
-  res.send(calReturnPercentage(boughtAt, returns));
+  res.send(calreturnPercentage(boughtAt,returns));
 });
 
 // Calculate the Total Return Percentage
